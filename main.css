@@ -1,0 +1,73 @@
+* { font-family: “Myriad Pro”, Arial, Helvetica, Tahoma, sans-serif; }
+
+header
+{
+	background-color: #eeeeee;
+	/*background-image: url("background.jpg");*/
+	background-size:cover;
+	height:100vh;
+	text-align: center;
+}
+body
+{
+	height:100%;
+}
+.p2
+{
+	font-size: 300%;
+}
+h3
+{
+	font-size:200%;
+}
+h4, .p1
+{
+	font-size:150%;
+}
+p
+{
+	font-size: 125%;
+}
+
+
+header>div.head
+{
+	top: 35%; 
+	left:30%;
+	margin-left: auto;
+	margin-top:auto;
+	position: absolute;
+	font-size:20px;
+	text-align: center;
+}
+
+.hf
+{
+	text-align: center;
+	top:85%;
+	left:45%;
+	position: absolute;
+}
+
+.intro
+{
+	margin-left: 15%;
+	margin-right:15%;
+}
+
+.center
+{
+	text-align:center;
+}
+
+.we1
+{
+	float: left;
+	width: 49%;
+	margin-right: auto;
+}
+.we2
+{
+
+	overflow: hidden;
+}
