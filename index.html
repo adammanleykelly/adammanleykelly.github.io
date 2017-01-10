@@ -9,10 +9,14 @@ Get Icon
 	<title>Adam Manley Kelly | Adam Manley Kelly</title>
 
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1,width=device-width,user-scalable=no">
-	<link rel="icon" type="image/png" href="icon.png">
+	<link rel="icon" type="image/png" href="logos/icon.png">
 
 	<link href="main.css" media="screen" rel="stylesheet" type="text/css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.6.4.js"></script>
+
+
 </head>
 
 <body>
@@ -22,33 +26,44 @@ Get Icon
 			<h1>Student of Computer Science</h1>
 			<h2>A work in progress...</h2>
 			<br>
-			<a href="#intro" ><img src="down.png" width="42" height="42"></a>
+
+		<script type='text/javascript'>//<![CDATA[
+		$(window).load(function(){
+		$('anchor1').click(function(){
+		    $('html, body').animate({
+		        scrollTop: $( $(this).attr('myAnchor') ).offset().top
+		    }, 500);
+		    return false;
+		});
+		});//]]> 
+
+		</script>
+
+			<a href="#myAnchor" rel="" id="anchor1" class="anchorLink">Link to the anchor</a>
+   
+			<a href="#intro1"><img src="logos/down.png" width="42" height="42"></a>
+
 		 	<br>
 		</div>
-		<!--<div class="hf">	
-			<hr>
-			<a href="#intro">Introduction</a>
-			<a href="#Cv">CV</a>
-			<a href="#Contact">Contact</a>
-		</div>-->
 	</header>
 
 	<main class="intro" id="intro">
+		
 		<article>
 			<section>
 			<p class="p2">Curriculum Vitae</p>
-				<h3>Introduction</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu urna non dui volutpat semper. Fusce enim ex, gravida nec ante pulvinar, sagittis suscipit dolor. Donec vel placerat enim. Aenean blandit elementum massa in tincidunt. Nam turpis quam, porta nec pellentesque tempor, pharetra et nulla. Nam vulputate ex nec egestas ullamcorper. Vestibulum ac mauris dolor. Praesent efficitur orci nibh, in mollis diam maximus a. Aliquam sodales, tortor in interdum interdum, arcu nulla vehicula nisi, a ultricies nibh nulla ut nisl. Nulla sit amet tempor mi. Nunc vulputate bibendum urna, a dictum purus viverra at. Nunc non odio sit amet lectus semper commodo. Etiam at aliquet dui. Praesent vel ultrices massa. Suspendisse iaculis turpis metus, eget auctor odio feugiat eget.
+				<h2>Introduction</h2>
+				<p>For the past 3 years,I have been studying Computing in CIT, the course covers a wide variety of subjects with an emphasis on java programming of which by the end of my third year I will have covered 8 modules worth, including a module in android app development. Other languages covered in the course are HTML, CSS and Java-script. I also have a small amount of experience with C from my time attending the Munster programming training program when I was in secondary school.
 
-				Aenean commodo pretium metus sit amet placerat. Morbi quis porttitor nulla, semper mollis ante. Proin luctus eget velit id malesuada. Donec semper venenatis nulla ac dignissim. Nam viverra vulputate sem sed venenatis. Nulla egestas, metus at tincidunt accumsan, sem ipsum molestie felis, quis ullamcorper nibh est id dolor. Sed sodales tortor quis blandit malesuada. Phasellus ex nunc, dignissim vitae nunc sed, condimentum malesuada elit.
+				Along with programming the course focuses on topics like Networking and Systems Administration, the various networking modules were all based off of Cisco’s courses, and Systems Administration courses were on Linux systems. Other modules covered include Web Development, Database Development, IT management and Requirements engineering. In my spare time, I am also developing a professional résumé website.
 
-				Pellentesque ac arcu ex. Vestibulum venenatis vehicula leo et condimentum. Sed id nulla urna. Vestibulum convallis nunc ac risus porta, vel lacinia lectus vehicula. Donec interdum elit tellus, ut auctor ipsum lacinia a. Aliquam scelerisque nibh a nibh maximus viverra. Cras ut malesuada orci, ut tempor felis. Donec aliquam fringilla blandit.
+				While my course is only 3 years long, once I graduate, I do intend to proceed onto the add on fourth year, which is the fourth year of Software development, to obtain an Honors Bachelor degree.
 				</p>
 			</section>
 			<hr>
 			<section id ="Education">
-				<h3>Education</h3>
-					
+				<h2>Education</h2>
+					<img src="logos/cit.jpg" width="248" height="232">
 					</br>
 					<div class="p1">Cork Institute of Technology 2013-2018 </div>
 					<p>
@@ -59,7 +74,7 @@ Get Icon
 					<div class="container">
 						 <div class="row">
 						    <div class="col-sm-5">
-						    	<img src="http://logos-download.com/wp-content/uploads/2016/10/Java_logo_icon.png" width="400" height="200">
+						    	<div class="img-wrapper"><img src="http://logos-download.com/wp-content/uploads/2016/10/Java_logo_icon.png" width="400" height="200"></div>
 								<div class="p1"><center>Java</center></div>
 								<ul>
 									<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu urna non dui volutpat semper.</li>
@@ -71,7 +86,7 @@ Get Icon
 							</div>
 
 							<div class="col-sm-5">
-								<img src="http://www.androidos.in/wp-content/uploads/2015/03/Android-logo-new.jpg" width="400" height="200">
+								<div class="img-wrapper"><img src="http://www.androidos.in/wp-content/uploads/2015/03/Android-logo-new.jpg" width="400" height="200"></div>
 								<div class="p1"><center>Android App Development</center></div>
 								<ul>
 									<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu urna non dui volutpat semper.</li>
@@ -84,7 +99,8 @@ Get Icon
 							</div>
 						</div>
 					</div>
-					<img src="ucclogo.png" width="299" height="143">
+
+					<img src="logos/ucclogo.png" width="299" height="143">
 					</br>
 					<div class="p1">UCC Munster programming Training (MPT) 2012</div>
 					<p>
@@ -97,22 +113,22 @@ Get Icon
 		
 			<hr>
 			<section id ="workExperience">
-				<h3>Work Experience</h3>
+				<h2>Work Experience</h2>
 				<h4>General Work Experience</h4>
 
 				<div class="container">
 						 <div class="row">
 						    <div class="col-sm-5">
-						    	<img src="comm.jpg" width="399" height="243">
-								<h4>Commodore Hotel</h4>
+						    	<img src="logos/comm.jpg" width="399" height="243">
+								<div class="p1"><center>Commodore Hotel</center></div>
 								<p>
 								Integer volutpat ipsum eget faucibus blandit. Duis egestas sem nisl. Maecenas vulputate elit non lacinia malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse eu accumsan felis. Curabitur augue justo, blandit eget dui ut, finibus dapibus lorem. Nunc tempus fermentum nisl ut vestibulum. Morbi maximus vel eros sed dictum. Suspendisse malesuada leo non dapibus imperdiet. Proin diam nunc, commodo imperdiet venenatis at, cursus vitae augue. Aliquam velit mauris, elementum ac condimentum at, blandit elementum erat. Quisque vitae magna urna. Aenean auctor ultrices viverra.
 								</p>
 							</div>
 
 							<div class="col-sm-5">
-								<img src="fota.jpg" width="399" height="243">
-								<h4>Fota Island Resort</h4>
+								<img src="logos/fota.jpg" width="399" height="243">
+								<div class="p1"><center>Fota Island Resort</center></div>
 								<p>
 								Integer volutpat ipsum eget faucibus blandit. Duis egestas sem nisl. Maecenas vulputate elit non lacinia malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse eu accumsan felis. Curabitur augue justo, blandit eget dui ut, finibus dapibus lorem. Nunc tempus fermentum nisl ut vestibulum. Morbi maximus vel eros sed dictum. Suspendisse malesuada leo non dapibus imperdiet. Proin diam nunc, commodo imperdiet venenatis at, cursus vitae augue. Aliquam velit mauris, elementum ac condimentum at, blandit elementum erat. Quisque vitae magna urna. Aenean auctor ultrices viverra.
 								</p>
@@ -123,7 +139,7 @@ Get Icon
 			</br>
 			<hr>
 			<section id ="workExperience">
-				<h3>Other</h3>
+				<h2>Other</h2>
 				<img src="red.jpg" width="399" height="243">
 				<h4>Irish Red Cross</h4>
 				<p>
@@ -132,9 +148,8 @@ Get Icon
 			</section>
 			<hr>
 
-			<hr>
 			<section id ="Contact">
-				<h3>Contact Details</h3>
+				<h2>Contact Details</h2>
 				<div class="container">
 				<center>
 						 <div class="row">
@@ -155,12 +170,14 @@ Get Icon
 							</center>
 						</div>
 					</div>
-				
 			</section>
+			<hr>
 		</article>
 	</main>
 	<center>
-	<a href="#top"><img src="up.png" width="42" height="42"></a>
+		<a name="myAnchor" id="myAnchor"><strong>Where i want to go</strong></a>
+	<a href="#top"><img src="logos/up.png" width="42" height="42"></a>
+
 	</center>
 </body>
 </html>
