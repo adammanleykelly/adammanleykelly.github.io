@@ -8,28 +8,21 @@ header
 	height:100vh;
 	text-align: center;
 }
-body
+
+header>div.title1
 {
-	height:100%;
-}
-.p2
-{
-	font-size: 300%;
-}
-h3
-{
-	font-size:200%;
-}
-h4, .p1
-{
-	font-size:150%;
-}
-p
-{
-	font-size: 100%;
+    position: absolute;
+    top:35%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
-/*Sidebar*/
+/* =============================================================================
+   SideBar
+   ========================================================================== */
+
 .sidenav {
     height: 100%;
     width: 0;
@@ -68,18 +61,33 @@ p
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+/* =============================================================================
+   Particles
+   ========================================================================== */
+   
+/* =============================================================================
+   Others
+   ========================================================================== */
 
-/*Sidebar*/
-
-header>div.head
+body
 {
-	top: 35%; 
-	left:30%;
-	margin-left: auto;
-	margin-top:auto;
-	position: absolute;
-	font-size:20px;
-	text-align: center;
+	height:100%;
+}
+.p2
+{
+	font-size: 300%;
+}
+h3
+{
+	font-size:200%;
+}
+h4, .p1
+{
+	font-size:150%;
+}
+p
+{
+	font-size: 100%;
 }
 
 .hf
