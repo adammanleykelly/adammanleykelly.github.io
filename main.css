@@ -2,9 +2,6 @@
 
 header
 {
-	background-color: #eeeeee;
-	/*background-image: url("background.jpg");*/
-	background-size:cover;
 	height:100vh;
 	text-align: center;
 }
@@ -27,7 +24,6 @@ header>div.title1
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
     top: 0;
     left: 0;
     background-color: #111;
@@ -64,9 +60,31 @@ header>div.title1
 /* =============================================================================
    Particles
    ========================================================================== */
-   
+canvas{
+    display:block;
+  
+}
+
+/* ---- particles.js container ---- */
+#particles-js{
+	
+  width: 100%;
+  height: 100%;
+  background-image: url('background2.jpg');
+  background-size:cover;
+  height:100vh;
+
+}
+
 /* =============================================================================
    Others
+
+   #particles-js
+   {position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;}
    ========================================================================== */
 
 body
