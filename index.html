@@ -27,13 +27,33 @@ Get Icon
 			<h2>A work in progress...</h2>
 			<br>
 			<a href="#intro1"><img src="logos/down.png" width="42" height="42"></a>
-
 		 	<br>
 		</div>
+		<!--Button-->
+		<span style="font-size:25px; position: fixed; left:0;cursor:pointer" onmouseover="openNav()">&#9776; Contents</span>
+
+		<!--NavBar-->
+		<div id="mySidenav" class="sidenav" onmouseover="openNav()" onmouseout="closeNav()">
+		  
+		  <a href="#intro1">Introduction</a>
+		  <a href="#Education">Education</a>
+		  <a href="#workExperience">Work Experience</a>
+		  <a href="#Contact">Contact</a>
+		</div>
+		
+
+		<script>
+		function openNav() {
+		    document.getElementById("mySidenav").style.width = "250px";
+		}
+
+		function closeNav() {
+		    document.getElementById("mySidenav").style.width = "0";
+		}
+		</script>
 	</header>
 
 	<main class="intro" id="intro1">
-		
 		<article>
 			<section>
 			<p class="p2">Curriculum Vitae</p>
@@ -107,24 +127,24 @@ Get Icon
 				<h4>General Work Experience</h4>
 
 				<div class="container">
-						 <div class="row">
-						    <div class="col-sm-5">
-						    	<img src="logos/comm.jpg" width="399" height="243">
-								<div class="p1"><center>Commodore Hotel</center></div>
-								<p>
-								Integer volutpat ipsum eget faucibus blandit. Duis egestas sem nisl. Maecenas vulputate elit non lacinia malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse eu accumsan felis. Curabitur augue justo, blandit eget dui ut, finibus dapibus lorem. Nunc tempus fermentum nisl ut vestibulum. Morbi maximus vel eros sed dictum. Suspendisse malesuada leo non dapibus imperdiet. Proin diam nunc, commodo imperdiet venenatis at, cursus vitae augue. Aliquam velit mauris, elementum ac condimentum at, blandit elementum erat. Quisque vitae magna urna. Aenean auctor ultrices viverra.
-								</p>
-							</div>
+					 <div class="row">
+					    <div class="col-sm-5">
+					    	<img src="logos/comm.jpg" width="399" height="243">
+							<div class="p1"><center>Commodore Hotel</center></div>
+							<p>
+							Integer volutpat ipsum eget faucibus blandit. Duis egestas sem nisl. Maecenas vulputate elit non lacinia malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse eu accumsan felis. Curabitur augue justo, blandit eget dui ut, finibus dapibus lorem. Nunc tempus fermentum nisl ut vestibulum. Morbi maximus vel eros sed dictum. Suspendisse malesuada leo non dapibus imperdiet. Proin diam nunc, commodo imperdiet venenatis at, cursus vitae augue. Aliquam velit mauris, elementum ac condimentum at, blandit elementum erat. Quisque vitae magna urna. Aenean auctor ultrices viverra.
+							</p>
+						</div>
 
-							<div class="col-sm-5">
-								<img src="logos/fota.jpg" width="399" height="243">
-								<div class="p1"><center>Fota Island Resort</center></div>
-								<p>
-								Integer volutpat ipsum eget faucibus blandit. Duis egestas sem nisl. Maecenas vulputate elit non lacinia malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse eu accumsan felis. Curabitur augue justo, blandit eget dui ut, finibus dapibus lorem. Nunc tempus fermentum nisl ut vestibulum. Morbi maximus vel eros sed dictum. Suspendisse malesuada leo non dapibus imperdiet. Proin diam nunc, commodo imperdiet venenatis at, cursus vitae augue. Aliquam velit mauris, elementum ac condimentum at, blandit elementum erat. Quisque vitae magna urna. Aenean auctor ultrices viverra.
-								</p>
-							</div>
+						<div class="col-sm-5">
+							<img src="logos/fota.jpg" width="399" height="243">
+							<div class="p1"><center>Fota Island Resort</center></div>
+							<p>
+							Integer volutpat ipsum eget faucibus blandit. Duis egestas sem nisl. Maecenas vulputate elit non lacinia malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse eu accumsan felis. Curabitur augue justo, blandit eget dui ut, finibus dapibus lorem. Nunc tempus fermentum nisl ut vestibulum. Morbi maximus vel eros sed dictum. Suspendisse malesuada leo non dapibus imperdiet. Proin diam nunc, commodo imperdiet venenatis at, cursus vitae augue. Aliquam velit mauris, elementum ac condimentum at, blandit elementum erat. Quisque vitae magna urna. Aenean auctor ultrices viverra.
+							</p>
 						</div>
 					</div>
+				</div>
 			</section>
 			</br>
 			<hr>
@@ -142,32 +162,33 @@ Get Icon
 				<h2>Contact Details</h2>
 				<div class="container">
 				<center>
-						 <div class="row">
-						    <div class="col-sm-3">
-						    	<center><a href="https://github.com/adammanleykelly"><img src="logos/github.png" width="100" height="100"></a>
-						    	<h4>Github</h4></center>
-							</div>
+					 <div class="row">
+					    <div class="col-sm-3">
+					    	<center><a href="https://github.com/adammanleykelly"><img src="logos/github.png" width="75" height="75"></a>
+					    	<h4>Github</h4></center>
+						</div>
 
-							<div class="col-sm-3">
-								<center><a href="https://www.linkedin.com/in/adammanleykelly"><img src="logos/linkedin.png" width=100" height="100"></a>
-								<h4>Linkedin</h4></center>
-							</div>
+						<div class="col-sm-3">
+							<center><a href="https://www.linkedin.com/in/adammanleykelly"><img src="logos/linkedin.png" width="75" height="75"></a>
+							<h4>Linkedin</h4></center>
+						</div>
 
-							<div class="col-sm-3">
-								<center><a href="mailto:adammanleykelly@gmail.com"><img src="logos/gmail.png" width="125" height="75"></a>
-								<h4>Gmail</h4></center>
-							</div>
-							</center>
+						<div class="col-sm-3">
+							<center><a href="mailto:adammanleykelly@gmail.com"><img src="logos/google.png" width="75" height="75"></a>
+							<h4>Gmail</h4></center>
 						</div>
 					</div>
+				</center>
 			</section>
 			<hr>
 		</article>
 	</main>
+
 	<center>
 		<a name="myAnchor" id="myAnchor"><strong>Where i want to go</strong></a>
-	<a href="#top"><img src="logos/up.png" width="42" height="42"></a>
-
+		<a href="#top"><img src="logos/up.png" width="42" height="42"></a>
 	</center>
 </body>
 </html>
+<!--
+<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
