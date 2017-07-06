@@ -1,216 +1,323 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<meta charset="UTF -8">
-	<title>Adam Manley Kelly | Adam Manley Kelly</title>
-	<meta name="description" content="Personal Resume Website">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1,width=device-width,user-scalable=no">
-	<meta name="author" content="Adam Manley Kelly" />
-	<link rel="icon" type="image/png" href="logos/icon.png">
-	<link href="main.css" media="screen" rel="stylesheet" type="text/css"/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 	<script type="text/javascript" src="//code.jquery.com/jquery-1.6.4.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Personal Resume Website">
+    <meta name="author" content="Adam Manley Kelly" />
+    <link rel="icon" type="image/png" href="images/logos/icon.png">
+
+    <title>Adam Manley Kelly</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
+
+    <!-- Temporary navbar container fix -->
+    <style>
+    .navbar-toggler {
+        z-index: 1;
+    }
+    
+    @media (max-width: 576px) {
+        nav > .container {
+            width: 100%;
+        }
+    }
+    </style>
+
 </head>
 
-<body>
-    <header id="top">
-	    <div id="particles-js"></div>
-		<!-- scripts -->
-		<script src="js/particles.min.js"></script>
-		<script src="js/app.js"></script>
-		<div class="title1">
-			<h1>Adam Manley Kelly</h1>
-			<h1>Student of Computer Science</h1>
-			<h2>under construction></h2>
-			<br>
-			<div class="arr"><a href="#intro1"><img src="images/logos/down.png" width="42" height="42"></a></div>
-		 	<br>
-		</div>
-		<!--Button-->
-		<span style="font-size:25px; position: fixed;  color: black; left:0; cursor:pointer" onmouseover="openNav()">&#9776; Content</span>
+<body id="page-top">
 
-		<!--NavBar-->
-		<div id="mySidenav" class="sidenav" onmouseover="openNav()" onmouseout="closeNav()">
-		  <a href="#intro1">Introduction</a>
-		  <a href="#Education">Education</a>
-		  <a href="#workExperience">Work Experience</a>
-		  <a href="#technicalSkills">Technical Skills</a>
-		  <a href="#Other">Other</a>
-		  <a href="#Contact">Contact</a>
-		</div>
-		
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Adam Manley Kelly</a>
+            <div class="collapse navbar-collapse" id="navbarExample">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#technicalSkills">Technical Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#other">Other</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-		<script>
-		function openNav() {
-		    document.getElementById("mySidenav").style.width = "250px";
-		}
+    <header class="masthead">
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading">Adam Manley Kelly</h1>
+                <hr>
+                <p>Student of Computer Science</p>
+                <a href="#about" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-down animated" style="font-size:48px;color:black;"></i>
+                </a>
+            </div>
+        </div>
+    </header>
 
-		function closeNav() {
-		    document.getElementById("mySidenav").style.width = "0";
-		}
-		</script>
-	</header>
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <h2 class="section-heading text-white">About me</h2>
+                    <hr class="light">
+                    <p class="text-faded">For the past 3 years,I have been studying Computing in CIT, the course covers a wide variety of subjects with an emphasis on java programming of which by the end of my third year I will have covered 8 modules worth, including a module in android app development. Other languages covered in the course are HTML, CSS and Java-script. I also have a small amount of experience with C from my time attending the Munster programming training program when I was in secondary school.
+                    </p>
 
-	<main class="intro" id="intro1">
-		<article>
-			<section>
-				<p class="p2">Curriculum Vitae</p>
-				<h2>Introduction</h2>
-				<p>
-				For the past 3 years,I have been studying Computing in CIT, the course covers a wide variety of subjects with an emphasis on java programming of which by the end of my third year I will have covered 8 modules worth, including a module in android app development. Other languages covered in the course are HTML, CSS and Java-script. I also have a small amount of experience with C from my time attending the Munster programming training program when I was in secondary school.
-				</p>
+                    <p class="text-faded">
+                    Along with programming the course focuses on topics like Networking and Systems Administration, the various networking modules were all based off of Cisco’s courses, and Systems Administration courses were on Linux systems. Other modules covered include Web Development, Database Development, IT management and Requirements engineering. In my spare time, I am also developing a professional résumé website.
+                    </p>
+                    <a href="#education" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated" ></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<p>
-				Along with programming the course focuses on topics like Networking and Systems Administration, the various networking modules were all based off of Cisco’s courses, and Systems Administration courses were on Linux systems. Other modules covered include Web Development, Database Development, IT management and Requirements engineering. In my spare time, I am also developing a professional résumé website.
-				</p>
-			</section>
-			<hr>
+    <section id="education">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Education</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
+                        <h3>Sturdy Templates</h3>
+                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
+                        <h3>Ready to Ship</h3>
+                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
+                        <h3>Up to Date</h3>
+                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
+                        <h3>Made with Love</h3>
+                        <p class="text-muted">You have to make your websites with love these days!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<section id ="Education">
-				<h2>Education</h2>
-					<img src="images/logos/cit.jpg" width="248" height="232">
-					</br>
-					<div class="p1">Cork Institute of Technology 2013-2018 </div>
-					<h4>	Computing (BSc Degree) 2013-2017 </h4>
-					<p>
-						For the past 3 years I have been studying Computer Science in CIT, the course covers a wide variety of subjects with an emphasis on programming of which by the end of my third year I will have covered 8 modules worth of java programming, including a module in android app development. I also have experience with HTML and JavaScript
+    <section class="no-padding" id="technicalSkills">
+        <div class="container-fluid">
+            <div class="row no-gutter popup-gallery">
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="images/portfolio/fullsize/1.jpg">
+                        <img class="img-fluid" src="images/portfolio/thumbnails/1.jpg" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="images/portfolio/fullsize/2.jpg">
+                        <img class="img-fluid" src="images/portfolio/thumbnails/2.jpg" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="images/portfolio/fullsize/3.jpg">
+                        <img class="img-fluid" src="images/portfolio/thumbnails/3.jpg" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="images/portfolio/fullsize/4.jpg">
+                        <img class="img-fluid" src="images/portfolio/thumbnails/4.jpg" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="images/portfolio/fullsize/5.jpg">
+                        <img class="img-fluid" src="images/portfolio/thumbnails/5.jpg" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="images/portfolio/fullsize/6.jpg">
+                        <img class="img-fluid" src="images/portfolio/thumbnails/6.jpg" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Category
+                                </div>
+                                <div class="project-name">
+                                    Project Name
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-						Along with programming the course covers subjects such as Networking, Web Development, Systems Administration(Linux), Databases, IT management and Requirements engineering. As far as working with Linux is concerned my course has several modules on the subject and I have been using Linux myself for the past few years. 
-					</p>
-					<h4>	Software Development (BSc honours) 2017-2018</h4>
-					<p>
-						Once I graduate from Computing at the end of this college year, I do intend to proceed onto the add on fourth year, which is the fourth year of Software development, to obtain an Honors Bachelor degree.
-					</p>
-					</br>
-					 <div class="row">
-						<div class="col-lg-6">
-					    	<div class="card">
-				          		<div class="container1">
-				          			<div class="img-wrapper"><center><img src="images/logos/java.png" width="400" height="200"></center></div>
-		    						<div class="p1"><center>Java</center></div>
-									<center><ul>
-										<p>Problem Solving and Programming 1 and 2<p>
-										<p>Object Oriented Programming 1 and 2 <p>
-										<p>Advanced Object Programming<p>
-										<p>Application User Interfaces<p>
-									</ul></center>           
-								</div>
-							</div>
-						</div>
+    <div class="call-to-action bg-dark">
+        <div class="container text-center">
+            <h2>Free Download at Start Bootstrap!</h2>
+            <a class="btn btn-default btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Download Now!</a>
+        </div>
+    </div>
 
-						<div class="col-lg-6">
-					    	<div class="card">
-				          		<div class="container1">
-				          			<div class="img-wrapper"><center><img src="images/logos/android.jpg" width="400" height="200"></center></div>
-									<div class="p1"><center>Android App Development</center></div>
-									<center><ul>
-										<p>Problem Solving and Programming 1 and 2<p>
-										<p>Object Oriented Programming 1 and 2 <p>
-										<p>Advanced Object Programming<p>
-										<p>Application User Interfaces<p>
-									</ul></center>           
-								</div>
-							</div>
-						</div>
-					</div>
-					</br>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <h2 class="section-heading">Contact</h2>
+                </div>
+                 <div class="col-lg-4 offset-lg-2 text-center">
+                    <a href="mailto:adammanleykelly@gmail.com"><i class="fa fa-google" style="font-size:48px;color:black;"></i></a>
+                    <p>Gmail</p>
+                </div>
+                <div class="col-lg-4 offset-lg-2 ">
+                    <a href="https://www.linkedin.com/in/adammanleykelly"><i class="fa fa-linkedin" style="font-size:48px;color:black;"></i></a>
+                    <p>Linkedin</p>
+                </div>
+              
+                <!-- <div class="col-lg-4 offset-lg-2 text-center">
+                    <a href="https://github.com/adammanleykelly"><i class="fa fa-github" style="font-size:48px;color:black;"></i></a>
+                    <p>Github</p>
+                </div>-->
+            </div>
+        </div>
+    </section>
+    <!--
+     <footer id="contact">
+        <div class="container">
+            <div class="row">
+              <!-- Left hand most side 
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Jean-Alexandre Turban 2016</span>
+                </div>
+                <!-- In the middle, shows icons side by side with proper links 
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li> <a href="mailto:adammanleykelly@gmail.com"><i class="fa fa-google" style="font-size:48px;color:black;"></i></a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/in/adammanleykelly"><i class="fa fa-linkedin" style="font-size:48px;color:black;"></i></a>
+                        </li>
+                        <li><a target="_blank" href="http://www.linkedin.com/pub/jean-alexandre-turban/87/8b4/833"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- On the right side, linkable mailto: 
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="mailto:jeanalex23@gmail.com">jeanalex23@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
 
-					<img src="images/logos/ucclogo.png" width="299" height="143">
-					</br>
-					<div class="p1">UCC Munster programming Training (MPT) 2012</div>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu urna non dui volutpat semper. Fusce enim ex, gravida nec ante pulvinar, sagittis suscipit dolor. Donec vel placerat enim. Aenean blandit elementum massa in tincidunt. Nam turpis quam, porta nec pellentesque tempor, pharetra et nulla. Nam vulputate ex nec egestas ullamcorper. Vestibulum ac mauris dolor. Praesent efficitur orci nibh, in mollis diam maximus a. Aliquam sodales, tortor in interdum interdum, arcu nulla vehicula nisi, a ultricies nibh nulla ut nisl. Nulla sit amet tempor mi. Nunc vulputate bibendum urna, a dictum purus viverra at. Nunc non odio sit amet lectus semper commodo. Etiam at aliquet dui. Praesent vel ultrices massa. Suspendisse iaculis turghjkpis metus, eget auctor odio feugiat eget.
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/tether/tether.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-						Aenean commodo pretium metus sit amet placerat. Morbi quis porttitor nulla, semper mollis ante. Proin luctus eget velit id malesuada. Donec semper venenatis nulla ac dignissim. Nam viverra vulputate sem sed venenatis. Nulla egestas, metus at tincidunt accumsan, sem ipsum molestie felis, quis ullamcorper nibh est id dolor. Sed sodales tortor quis blandit malesuada. Phasellus ex nunc, dignissim vitae nunc sed, condimentum malesuada elit.
-					<p>
-					</br>
-			</section>
-			<hr>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-			<section id ="technicalSkills">
-				<h2>Technical Skills</h2>
-				<h4>Integer volutpat ipsum eget</h4>
-				<p>
-				Integer volutpat ipsum eget faucibus blandit. Duis egestas sem nisl. Maecenas vulputate elit non lacinia malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse eu accumsan felis. Curabitur augue justo, blandit eget dui ut, finibus dapibus lorem. Nunc tempus fermentum nisl ut vestibulum. Morbi maximus vel eros sed dictum. Suspendisse malesuada leo non dapibus imperdiet. Proin diam nunc, commodo imperdiet venenatis at, cursus vitae augue. Aliquam velit mauris, elementum ac condimentum at, blandit elementum erat. Quisque vitae magna urna. Aenean auctor ultrices viverra.
-				</p>
-			</section>
-			<hr>
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
 
-			<section id ="workExperience">
-				<h2>Work Experience</h2>
-				<div class="row">
-				    <div class="col-lg-6">
-				    	<div class="card">
-			          		<div class="container1">
-			          			<div class="img-wrapper"><center><img src="images/logos/comm.jpg" width="399" height="243"></center></div>
-	    						<h4><b>Commodore Hotel</b></h4> 
-								<p>
-								Integer volutpat ipsum eget faucibus blandit. Duis egestas sem nisl. Maecenas vulputate elit non lacinia malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse eu accumsan felis. Curabitur augue justo, blandit eget dui ut, finibus dapibus lorem. Nunc tempus fermentum nisl ut vestibulum. Morbi maximus vel eros sed dictum. Suspendisse malesuada leo non dapibus imperdiet. Proin diam nunc, commodo imperdiet venenatis at, cursus vitae augue. Aliquam velit mauris, elementum ac condimentum at, blandit elementum erat. Quisque vitae magna urna. Aenean auctor ultrices viverra.
-								</p>	            
-							</div>
-						</div>
-					</div>
-
-					
-					<div class="col-lg-6">
-				    	<div class="card">
-			          		<div class="container1">
-			          			<div class="img-wrapper"><center><img src="images/logos/fota.jpg" width="399" height="243"></center></div>
-	    						<h4><b>Fota Island Collection</b></h4> 
-								<p>
-								Integer volutpat ipsum eget faucibus blandit. Duis egestas sem nisl. Maecenas vulputate elit non lacinia malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse eu accumsan felis. Curabitur augue justo, blandit eget dui ut, finibus dapibus lorem. Nunc tempus fermentum nisl ut vestibulum. Morbi maximus vel eros sed dictum. Suspendisse malesuada leo non dapibus imperdiet. Proin diam nunc, commodo imperdiet venenatis at, cursus vitae augue. Aliquam velit mauris, elementum ac condimentum at, blandit elementum erat. Quisque vitae magna urna. Aenean auctor ultrices viverra.
-								</p>		            
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			</br>
-			<hr>
-
-			<section id ="Other">
-				<h2>Other</h2>
-				<img src="images/logos/red.jpg" width="399" height="243">
-				<h4>Irish Red Cross</h4>
-				<p>
-				Integer volutpat ipsum eget faucibus blandit. Duis egestas sem nisl. Maecenas vulputate elit non lacinia malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse eu accumsan felis. Curabitur augue justo, blandit eget dui ut, finibus dapibus lorem. Nunc tempus fermentum nisl ut vestibulum. Morbi maximus vel eros sed dictum. Suspendisse malesuada leo non dapibus imperdiet. Proin diam nunc, commodo imperdiet venenatis at, cursus vitae augue. Aliquam velit mauris, elementum ac condimentum at, blandit elementum erat. Quisque vitae magna urna. Aenean auctor ultrices viverra.
-				</p>
-			</section>
-			<hr>
-
-			<section id ="Contact">
-				<h2>Contact Details</h2>
-				<div class="container">
-					
-						 <div class="row">
-						    <div class="col-lg-4">
-						    	<center><a href="https://github.com/adammanleykelly"><img src="images/logos/github.png" width="75" height="75"></a>
-						    	<h4>Github</h4></center>
-							</div>
-
-							<div class="col-lg-4">
-								<center><a href="https://www.linkedin.com/in/adammanleykelly"><img src="images/logos/linkedin.png" width="75" height="75"></a>
-								<h4>Linkedin</h4></center>
-							</div>
-
-							<div class="col-lg-4">
-								<center><a href="mailto:adammanleykelly@gmail.com"><img src="images/logos/google.png" width="75" height="75"></a>
-								<h4>Gmail</h4></center>
-							</div>
-						</div>
-					
-				</div>
-			</section>
-			<hr>
-		</article>
-	</main>
-
-	<center>
-	 <footer><a href="#top" class="a smscroll waves-effect waves-light">&uarr;</a></footer>
-		<a href="#top"><img src="images/logos/up.png" width="42" height="42"></a>
-	</center>
 </body>
+
 </html>
-<!--
-<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
