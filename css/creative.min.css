@@ -51,3 +51,22 @@
  .btn-primary.active.focus,.btn-primary.active:focus,.btn-primary.active:hover,.btn-primary:active.focus,.btn-primary:active:focus,.btn-primary:active:hover,.open>.btn-primary.dropdown-toggle.focus,.open>.btn-primary.dropdown-toggle:focus,.open>.btn-primary.dropdown-toggle:hover{color:#fff;border-color:#a4270d;background-color:#c93110}.btn-primary.active,.btn-primary:active,.open>.btn-primary.dropdown-toggle{background-image:none}.btn-primary.disabled.focus,.btn-primary.disabled:focus,.btn-primary.disabled:hover,.btn-primary[disabled].focus,.btn-primary[disabled]:focus,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary.focus,fieldset[disabled] .btn-primary:focus,fieldset[disabled] .btn-primary:hover{border-color:#f05f40;background-color:#f05f40}
  .btn-primary .badge{color:#f05f40;background-color:#fff}
  .btn{font-weight:700;text-transform:uppercase;border:none;border-radius:300px;font-family:'Open Sans','Helvetica Neue',Arial,sans-serif}.btn-xl{padding:15px 30px}
+
+  footer{padding:25px 0;text-align:center}
+ footer span.copyright{line-height:40px;text-transform:uppercase;text-transform:none}
+ footer ul.quicklinks{margin-bottom:0;line-height:40px;text-transform:uppercase;text-transform:none}
+ ul.social-buttons{margin-bottom:0}
+ ul.social-buttons li a{display:block;background-color:#222;height:40px;width:40px;border-radius:100%;font-size:20px;line-height:40px;color:#fff;outline:0;-webkit-transition:all .3s;-moz-transition:all .3s;transition:all .3s}
+ ul.social-buttons li a:active,ul.social-buttons li a:focus,ul.social-buttons li a:hover{background-color:#fed136}
+
+  footer{padding:25px 0;text-align:center}
+ footer span.copyright{line-height:40px;text-transform:uppercase;text-transform:none}
+ footer ul.quicklinks{margin-bottom:0;line-height:40px;text-transform:uppercase;text-transform:none}
+ ul.social-buttons{margin-bottom:0}
+ ul.social-buttons li a{display:block;background-color:#222;height:40px;width:40px;border-radius:100%;font-size:20px;line-height:40px;color:#fff;outline:0;-webkit-transition:all .3s;-moz-transition:all .3s;transition:all .3s}
+ ul.social-buttons li a:active,ul.social-buttons li a:focus,ul.social-buttons li a:hover{background-color:#fed136}
+ ul.list-inline{margin-bottom:30px;margin-top:0}
+
+ .col-md-4{position:relative;min-height:1px;padding-right:15px;padding-left:15px}
+ .col-md-4{float:left}
+ .col-md-4{width:33.33333333%}
