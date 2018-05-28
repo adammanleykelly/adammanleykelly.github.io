@@ -82,7 +82,7 @@ canvas
   background-size:cover;
   height:100vh;
   position:absolute;
-  z-index: 3;
+  z-index: -3;
 }
 /*=============================================================================
    Card
