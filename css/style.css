@@ -1,13 +1,26 @@
+:root {
+    --background-color: #5D616D; /* Default Dark mode background */
+    --text-color: #fff; /* Default Dark mode text */
+}
+
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
     line-height: 1.6;
-    height: 100%; /* Make sure the body fills the viewport */
-    overflow: hidden; /* Prevent horizontal scrolling */
+    height: 100%; /* Ensure the body fills the viewport */
 }
+
+/* Define light mode variables in :root scope for light mode */
+body.light-mode {
+    --background-color: #f9f9f9; /* Light mode background */
+    --text-color: #333; /* Light mode text */
+}
+
+
 nav ul {
     display: flex;
     justify-content: center;
@@ -23,6 +36,38 @@ nav ul li a {
     color: #007bff;
     font-weight: bold;
 }
+/* Position the theme toggle button in the top right corner */
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it stays on top */
+    transition: color 0.3s;
+}
+
+/* Hide moon icon by default */
+#moon-icon {
+    display: none;
+}
+
+/* Change icon visibility based on the theme */
+body.light-mode #sun-icon {
+    display: none;
+}
+
+body.light-mode #moon-icon {
+    display: block;
+}
+
+/* Optional: Hover effect for the button */
+.theme-toggle-btn:hover {
+    color: #FFD700; /* Gold color on hover */
+}
 
 
  /*=============================================================================
@@ -34,7 +79,7 @@ header.masthead{
   width:100%;
   min-height:100vh;
   text-align:center;
-  color:#fff;
+  color:var(--text-color);
   background-position:center;
   -webkit-background-size:cover;
   -moz-background-size:cover;
@@ -71,10 +116,10 @@ header.masthead .header-content .header-content-inner hr
 {margin:15px auto}
 
 header.masthead .header-content .header-content-inner p {
-    font-size:18px;
+    font-size:25px;
     font-weight:300;
     margin: 0 auto 50px;
-    color:rgba(255,255,255,.7)
+    color:var(--text-color);
 }
 
 /* Particles.js container */
@@ -82,6 +127,6 @@ header.masthead #particles-js{
   position: absolute; 
   width: 100%;
   height: 100vh;
-  background-color: #5D616D;
-
+  background-color: var(--background-color);
+  
 }
