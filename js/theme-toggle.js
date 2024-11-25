@@ -3,103 +3,115 @@ document.addEventListener('DOMContentLoaded', () => {
     const sunIcon = document.getElementById('sun-icon');
     const moonIcon = document.getElementById('moon-icon');
 
-    // Full Particles.js configuration
+    // Particles configuration as a JavaScript object
     const particlesConfig = {
         particles: {
-            number: { value: 100, density: { enable: true, value_area: 800 } },
-            color: { value: "#ffffff" }, // Default to dark mode
-            shape: {
-                type: "circle",
-                stroke: { width: 0, color: "#000000" },
-                polygon: { nb_sides: 5 },
-            },
-            opacity: { value: 0.5, random: false },
-            size: { value: 3, random: true },
+            number: { value: 100 },
+            size: { value: 3 },
+            opacity: { value: 0.5 },
+            color: { value: "#ffffff" }, // Default dark mode color
             line_linked: {
                 enable: true,
-                distance: 150,
-                color: "#ffffff", // Default to dark mode
-                opacity: 0.4,
+                color: "#ffffff", // Default dark mode link color
+                opacity: 0.9,
                 width: 1,
             },
             move: {
                 enable: true,
-                speed: 6,
+                speed: 2,
                 direction: "none",
                 random: false,
                 straight: false,
-                out_mode: "out",
-                bounce: false,
-                attract: { enable: false, rotateX: 600, rotateY: 1200 },
             },
         },
         interactivity: {
             detect_on: "canvas",
             events: {
-                onhover: { enable: true, mode: "repulse" },
-                onclick: { enable: true, mode: "push" },
+                onhover: {
+                    enable: true,
+                    mode: ["repulse", "bubble"],
+                },
+                onclick: {
+                    enable: true,
+                    mode: "push",
+                },
                 resize: true,
             },
             modes: {
-                grab: { distance: 400, line_linked: { opacity: 1 } },
-                bubble: { distance: 200, size: 40, duration: 2, opacity: 8, speed: 3 },
-                repulse: { distance: 200, duration: 0.4 },
-                push: { particles_nb: 4 },
-                remove: { particles_nb: 2 },
+                repulse: {
+                    distance: 200,
+                    duration: 0.4,
+                },
+                bubble: {
+                    distance: 200,
+                    size: 20,
+                    duration: 2,
+                    opacity: 0.8,
+                    speed: 3,
+                },
+                push: {
+                    particles_nb: 4,
+                },
+                remove: {
+                    particles_nb: 2,
+                },
             },
         },
-        retina_detect: true,
+        background: {
+            color: { value: "#333" }, // Default dark mode background
+        },
     };
 
-    // Function to dynamically update particles configuration for light or dark mode
-    const updateParticlesConfig = (theme) => {
-        if (theme === "light") {
-            particlesConfig.particles.color.value = "#000000"; // Black for light mode
-            particlesConfig.particles.line_linked.color = "#000000"; // Black for light mode
-        } else {
-            particlesConfig.particles.color.value = "#ffffff"; // White for dark mode
-            particlesConfig.particles.line_linked.color = "#ffffff"; // White for dark mode
-        }
-    };
-
-    // Initialize Particles.js
+    // Initialize particles with the current configuration
     const initializeParticles = (theme) => {
-        updateParticlesConfig(theme);
-
-        if (window.pJSDom && window.pJSDom.length > 0) {
-            pJSDom[0].pJS.fn.vendors.destroypJS(); // Destroy existing particles instance
-            pJSDom = []; // Reset particles DOM
+        // Update particle and link colors based on theme
+        if (theme === "light") {
+            particlesConfig.particles.color.value = "#000000"; // Black particles for light mode
+            particlesConfig.particles.line_linked.color = "#000000"; // Black links for light mode
+            particlesConfig.background.color.value = "#f9f9f9"; // Light mode background
+        } else {
+            particlesConfig.particles.color.value = "#ffffff"; // White particles for dark mode
+            particlesConfig.particles.line_linked.color = "#ffffff"; // White links for dark mode
+            particlesConfig.background.color.value = "#333"; // Dark mode background
         }
-        particlesJS("particles-js", particlesConfig); // Initialize particles with updated config
+
+        // Destroy existing particles instance if it exists
+        if (window.pJSDom && window.pJSDom.length > 0) {
+            pJSDom[0].pJS.fn.vendors.destroypJS();
+            pJSDom = [];
+        }
+
+        // Initialize particles.js with updated configuration
+        particlesJS("particles-js", particlesConfig);
     };
 
-    // Apply saved theme and initialize on page load
+    // Apply saved theme on page load
     const currentTheme = localStorage.getItem("theme") || "dark";
     if (currentTheme === "light") {
         document.body.classList.add("light-mode");
-        sunIcon.style.display = "none";
-        moonIcon.style.display = "block";
+        sunIcon.style.display = "none"; // Hide sun icon in light mode
+        moonIcon.style.display = "block"; // Show moon icon in light mode
     } else {
         document.body.classList.remove("light-mode");
-        sunIcon.style.display = "block";
-        moonIcon.style.display = "none";
+        sunIcon.style.display = "block"; // Show sun icon in dark mode
+        moonIcon.style.display = "none"; // Hide moon icon in dark mode
     }
-    initializeParticles(currentTheme);
+    initializeParticles(currentTheme); // Initialize particles with the current theme
 
-    // Toggle theme and reinitialize particles on button click
+    // Toggle theme and particles on button click
     toggleButton.addEventListener("click", () => {
         if (document.body.classList.contains("light-mode")) {
             document.body.classList.remove("light-mode");
             localStorage.setItem("theme", "dark");
-            sunIcon.style.display = "block";
-            moonIcon.style.display = "none";
-            initializeParticles("dark");
+            sunIcon.style.display = "block"; // Show sun icon in dark mode
+            moonIcon.style.display = "none"; // Hide moon icon in dark mode
+            initializeParticles("dark"); // Reinitialize particles for dark mode
         } else {
             document.body.classList.add("light-mode");
             localStorage.setItem("theme", "light");
-            sunIcon.style.display = "none";
-            moonIcon.style.display = "block";
-            initializeParticles("light");
+            sunIcon.style.display = "none"; // Hide sun icon in light mode
+            moonIcon.style.display = "block"; // Show moon icon in light mode
+            initializeParticles("light"); // Reinitialize particles for light mode
         }
     });
 });
