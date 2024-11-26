@@ -6,22 +6,70 @@ document.addEventListener('DOMContentLoaded', () => {
     // Particles configuration as a JavaScript object
     const particlesConfig = {
         particles: {
-            number: { value: 100 },
-            size: { value: 3 },
-            opacity: { value: 0.5 },
-            color: { value: "#ffffff" }, // Default dark mode color
+            number: {
+                value: 100,
+                density: { 
+                    enable: true, 
+                    value_area: 800 
+                } // Added density
+            },
+            size: { 
+                value: 3, 
+                random: true, // Added random size
+                anim: { 
+                    enable: false, 
+                    speed: 40, 
+                    size_min: 0.1, 
+                    sync: false 
+                } // Added animation settings
+            },
+            opacity: { 
+                value: 0.4, 
+                random: false, 
+                anim: { 
+                    enable: false, 
+                    speed: 1, 
+                    opacity_min: 0.1, 
+                    sync: false 
+                } // Added opacity animation settings
+            },
+            color: { 
+                value: "#ffffff" 
+            },
+            shape: {
+                type: "circle", // Added shape type
+                stroke: { 
+                    width: 0, 
+                    color: "#000000" 
+                }, // Added shape stroke
+                polygon: { 
+                    nb_sides: 5 
+                }, // Added polygon sides
+                image: { 
+                    src: "img/github.svg", 
+                    width: 100, 
+                    height: 100 
+                } // Added shape image
+            },
             line_linked: {
                 enable: true,
-                color: "#ffffff", // Default dark mode link color
-                opacity: 0.9,
-                width: 1,
+                distance: 150, // Added link distance
+                color: "#ffffff",
+                opacity: 0.3,
+                width: 1
             },
             move: {
                 enable: true,
-                speed: 2,
+                speed: 5,
                 direction: "none",
                 random: false,
                 straight: false,
+                out_mode: "out", // Added out_mode
+                attract: { 
+                    enable: false, 
+                    rotateX: 600, 
+                    rotateY: 1200 
+                } // Added attract properties
             },
         },
         interactivity: {
@@ -29,38 +77,45 @@ document.addEventListener('DOMContentLoaded', () => {
             events: {
                 onhover: {
                     enable: true,
-                    mode: ["repulse", "bubble"],
+                    mode: ["repulse", "bubble"]
                 },
                 onclick: {
                     enable: true,
-                    mode: "push",
+                    mode: "push"
                 },
-                resize: true,
+                resize: true
             },
             modes: {
-                repulse: {
-                    distance: 200,
-                    duration: 0.4,
-                },
+                grab: { 
+                    distance: 400, 
+                    line_linked: { 
+                        opacity: 1 
+                    } 
+                }, // Added grab mode
                 bubble: {
                     distance: 200,
                     size: 20,
                     duration: 2,
                     opacity: 0.8,
-                    speed: 3,
+                    speed: 3
+                },
+                repulse: {
+                    distance: 200,
+                    duration: 0.4
                 },
                 push: {
-                    particles_nb: 4,
+                    particles_nb: 4
                 },
                 remove: {
-                    particles_nb: 2,
-                },
+                    particles_nb: 2
+                }
             },
         },
         background: {
             color: { value: "#333" }, // Default dark mode background
         },
     };
+
 
     // Initialize particles with the current configuration
     const initializeParticles = (theme) => {

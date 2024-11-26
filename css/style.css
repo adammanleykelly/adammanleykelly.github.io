@@ -139,7 +139,7 @@ header.masthead .header-content button {
 
  /*Padding between hr line */
 header.masthead .header-content .header-content-inner hr
-{margin:15px auto; pointer-events: auto;}
+{margin:15px auto; pointer-events: none;, z-index: 2;}
 
 header.masthead .header-content .header-content-inner p {
     font-size:25px;
