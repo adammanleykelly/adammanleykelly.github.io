@@ -20,42 +20,45 @@ body.light-mode {
     --text-color: #000000; /* Light mode text */
 }
 
-
+/* Style the nav links with centered vertical separators */
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
+    display: flex; /* Use flexbox for precise alignment */
+    justify-content: center; /* Center all items */
+    list-style: none; /* Remove bullets */
     padding: 0;
-    margin: 20px 0;
-}
-nav ul li {
-    margin: 0 15px;
-}
-nav ul li a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-}
-
-/* Style the dropdown menu */
-nav ul {
-    list-style-type: none;
     margin: 0;
-    padding: 0;
 }
 
 nav ul li {
-    display: inline-block;
     position: relative;
+    padding: 0 15px; /* Equal spacing on both sides */
 }
 
+nav ul li:not(:last-child)::after {
+    content: ""; /* Add a pseudo-element for the line */
+    position: absolute;
+    right: 0; /* Position line on the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Align to the middle */
+    height: 50%; /* Adjust the height of the line */
+    width: 1px; /* Thickness of the line */
+    background-color: rgba(255, 255, 255, 0.3); /* Subtle line color */
+}
+
+/* Adjust for theme light/dark mode */
+body.light-mode nav ul li:not(:last-child)::after {
+    background-color: rgba(0, 0, 0, 0.3); /* Line color for light mode */
+}
+
+/* Center-align the links */
 nav ul li a {
     text-decoration: none;
     color: #007bff;
-    padding: 10px 15px;
-    display: block;
     font-weight: bold;
+    display: inline-block;
+    padding: 10px 0; /* Adjust padding for vertical centering */
 }
+
 
 /* Dropdown container */
 nav ul li .dropdown-content {
