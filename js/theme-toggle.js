@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, // Added grab mode
                 bubble: {
                     distance: 200,
-                    size: 20,
+                    size: 5,
                     duration: 2,
                     opacity: 0.8,
                     speed: 3
