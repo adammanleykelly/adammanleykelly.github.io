@@ -72,6 +72,19 @@
 
 <!--Privacy data can only be queried on a standard paid plan-->
     <script>
+
+        window.onload = function () {
+            const savedApiKey = localStorage.getItem("apiKey");
+            if (savedApiKey) {
+                document.getElementById("apiKey").value = savedApiKey;
+            }
+        };
+
+        document.getElementById("apiKey").addEventListener("input", function () {
+            const apiKey = this.value;
+            localStorage.setItem("apiKey", apiKey);
+        });
+
         // Add a drag and drop event listener to the textarea
         document.getElementById("ipList").addEventListener("drop", function (event) {
             // Prevent the default behavior (open as link for some elements)
