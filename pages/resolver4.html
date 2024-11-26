@@ -64,6 +64,7 @@
                 <th>IP Address</th>
                 <th>Registrar</th>
                 <th>Country</th>
+                <th>Actions</th>
             </tr>
         </table>
     </div>
@@ -150,10 +151,29 @@
             function addRowToTable(ip, registrar, country) {
                 const table = document.getElementById("resultsTable");
                 const row = table.insertRow(-1);
+
                 row.insertCell(0).innerText = ip;
                 row.insertCell(1).innerText = registrar;
                 row.insertCell(2).innerText = country;
+
+                // Add the actions cell with buttons
+                const actionsCell = row.insertCell(3);
+                actionsCell.appendChild(createButton("VT", `https://www.virustotal.com/gui/ip-address/${ip}`));
+                actionsCell.appendChild(createButton("AbuseIPDB", `https://www.abuseipdb.com/check/${ip}`));
+                actionsCell.appendChild(createButton("Shodan", `https://www.shodan.io/host/${ip}`));
+                actionsCell.appendChild(createButton("IpInfo", `https://ipinfo.io/${ip}`));
+                actionsCell.appendChild(createButton("AVault", `https://otx.alienvault.com/indicator/ip/${ip}`));
             }
+
+            function createButton(label, url) {
+                const button = document.createElement("button");
+                button.innerText = label;
+                button.style.marginRight = "5px"; // Add some spacing between buttons
+                button.onclick = () => window.open(url, "_blank");
+                return button;
+            }
+
+
 
             function isRFC1918(ip) {
                 const [a, b, c] = ip.split(".").map(Number);
@@ -216,28 +236,26 @@
 
 
         function exportToCsv() {
-            // Get the results table
-            var table = document.getElementById("resultsTable");
+            const table = document.getElementById("resultsTable");
+            let csvData = "";
 
-            // Build the CSV data as a string
-            var csvData = "";
-            for (var i = 0; i < table.rows.length; i++) {
-                var row = table.rows[i];
-                for (var j = 0; j < row.cells.length; j++) {
-                    csvData += row.cells[j].innerHTML;
-                    if (j < row.cells.length - 1) {
-                        csvData += ",";
-                    }
-                }
-                csvData += "\n";
+            // Loop through each row of the table
+            for (const row of table.rows) {
+                const cells = Array.from(row.cells); // Get all cells in the row
+                const rowData = cells
+                    .slice(0, cells.length - 1) // Exclude the last cell (Actions column)
+                    .map(cell => cell.innerText); // Extract the text content of each cell
+                csvData += rowData.join(",") + "\n"; // Join cells with a comma and add a newline
             }
 
-            // Download the CSV file
-            var link = document.createElement("a");
+            // Create a link to download the CSV
+            const link = document.createElement("a");
             link.download = "whois.csv";
-            link.href = "data:text/csv;charset=utf-8," + encodeURI(csvData);
+            link.href = "data:text/csv;charset=utf-8," + encodeURIComponent(csvData);
             link.click();
         }
+
+
 
         function makeTableSortable() {
             const table = document.getElementById("resultsTable");
