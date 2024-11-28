@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ResolverV4.5</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="header">Resolver V4.5</h1>
+        <div class="message">
+            <p>Enter a list of IP addresses or drag and drop a text file containing IP addresses. (Private and Duplicate IPs will be removed automatically)</p>
+        </div>
+
+        <div class="grid">
+            <div class="column">
+                <form class="ip-form">
+                    <h3 for="api-key">IPinfo API Key:</h3>
+                    <input type="text" id="api-key"><br><br>
+                    <div style="position: relative; display: inline-block; width: 100%;">
+                        <textarea id="ip-list" rows="10" cols="50" style="width: 100%; resize: none;"></textarea>
+                        <span id="line-count" style="
+                            position: absolute; 
+                            bottom: 5px; 
+                            right: 10px; 
+                            color: gray; 
+                            font-size: 12px; 
+                            background-color: white; 
+                            padding: 2px 5px; 
+                            border-radius: 3px;">
+                            Lines: 0
+                        </span>
+                    </div>
+
+                    <button type="button" class="button" onclick="lookup()">Lookup</button>
+                    <button type="button" class="button" onclick="exportToCsv()">Export to CSV</button>
+                    <div class="progress-bar" >
+                        <div class="progress-fill"></div>
+                        <span class="progress-text">
+                            Progress: 0 / 0
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="column chart-container">
+                <h3>Country Distribution</h3>
+                <canvas class="chart" id="country-chart"></canvas>
+            </div>
+
+            <div class="column chart-container">
+                <h3>Registrar Distribution</h3>
+                <canvas class="chart" id="registrar-chart"></canvas>
+            </div>
+        </div>
+
+        <table class="table results-table">
+            <thead>
+                <tr>
+                    <th>IP Address</th>
+                    <th>Registrar</th>
+                    <th>Country</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
