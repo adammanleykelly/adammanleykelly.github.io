@@ -78,16 +78,86 @@ body {
 }
 
 /* Grid Layout */
+/* Grid container for the layout */
+/* Ensure all columns are the same height */
+/* Grid container for layout */
 .grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    gap: 20px; /* Space between columns */
+    align-items: stretch; /* Ensure columns stretch to the same height */
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
 }
 
+/* Ensure all columns share equal height */
+/* Columns should have equal height by default */
 .column {
     flex: 1;
-    min-width: 250px;
+    display: flex;
+    flex-direction: column;
 }
+
+.column h3{
+    margin-top: 8px; Remove extra margin at the top */
+    margin-bottom: 10px; /* Optional: Add some spacing below the heading */
+}
+
+
+/* Chart container styles */
+.chart-container {
+    flex: 1; /* Stretch to fill available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc; /* Optional: Add a border */
+    border-radius: 5px; /* Optional: Rounded corners */
+    padding: 10px;
+    background-color: #f9f9f9; /* Optional: Light background color */
+    width: 100%; /* Ensure full width in all layouts */
+    min-height: 20vh; /* Minimum height based on viewport */
+    max-height: 40vh; /* Optional: Maximum height for very large screens */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+/* Responsive layout: stack columns vertically on narrow screens */
+@media (max-width: 768px) {
+    .grid {
+        flex-direction: column; /* Stack columns vertically */
+    }
+
+    .column {
+        flex: none; /* Reset flex-grow to prevent stretching */
+        width: 100%; /* Make columns take full width */
+    }
+
+    .chart-container {
+        width: 100%; /* Ensure containers take full width */
+    }
+}
+
+/* Chart container heading alignment */
+.chart-container h3 {
+    margin-top: 0; /* Remove extra margin at the top */
+    margin-bottom: 10px; /* Optional: Add some spacing below the heading */
+    font-size: 1.2em; /* Adjust size for consistency */
+    width: 100%; /* Ensure heading takes full width */
+    text-align: left; /* Align text to the left */
+}
+
+/* Limit canvas size */
+.chart-container canvas {
+    width: 100% !important; /* Stretch canvas horizontally */
+    max-height: 300px !important; /* Limit vertical growth */
+    object-fit: contain; /* Ensure the chart fits within the container */
+}
+
+/* Form column */
+.ip-form {
+    max-width: 300px; /* Ensure the form does not stretch unnecessarily */
+}
+
+
+/* Chart container */
+
 
 /* Progress Bar */
 .progress-bar {
@@ -121,20 +191,6 @@ body {
     white-space: nowrap; /* Prevent text wrapping */
 }
 
-/* General Styles for Chart Containers */
-.chart-container {
-    margin-left: 20px; /* Add space to the left of the chart */
-    border: 1px solid #ccc; /* Add a light border around the chart */
-    border-radius: 5px; /* Optional: Rounded corners */
-    padding: 10px; /* Add some padding inside the border */
-    background-color: #f9f9f9; /* Optional: Light background color */
-}
-
-/* Adjust Chart Canvas Size */
-.chart-container canvas {
-    width: 100%; /* Make the canvas responsive */
-    height: auto; /* Maintain aspect ratio */
-}
 
 /* Container for the textarea and line count */
 .textarea-container {
@@ -159,4 +215,38 @@ body {
     background-color: white;
     padding: 2px 5px;
     border-radius: 3px;
+}
+
+/* Style placeholder text */
+#api-key::placeholder,
+#ip-list::placeholder {
+    color: #999; /* Light gray to give a faded effect */
+    font-style: italic; /* Optional: Make it italic for differentiation */
+    font-size: 14px; /* Adjust font size if needed */
+    opacity: 1; /* Ensure placeholder text is fully visible */
+}
+
+/* Optional: Adjust focus styles for inputs */
+#api-key:focus,
+#ip-list:focus {
+    outline: 2px solid #4caf50; /* Highlight input on focus */
+}
+
+/* Footer styles */
+.footer {
+    text-align: center; /* Center the text */
+    padding: 10px 0; /* Add some vertical spacing */
+   
+    font-size: 14px; /* Adjust font size */
+    color: #333; /* Text color */
+}
+
+/* Footer link styling */
+.footer-link {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-link:hover {
+    text-decoration: underline; /* Underline on hover */
 }

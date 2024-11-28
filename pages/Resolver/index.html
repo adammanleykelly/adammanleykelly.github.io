@@ -4,10 +4,8 @@
 <head>
     <title>ResolverV4.5</title>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/script.js"></script>
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">-->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -15,22 +13,22 @@
     <div class="container">
         <h1 class="header">Resolver V4.5</h1>
         <div class="message">
-            <p>Enter a list of IP addresses or drag and drop a text file containing IP addresses. (Private and Duplicate IPs will be removed automatically)</p>
+            <p>Enter a list of IP addresses or drag and drop a text file containing IP addresses. (Private, Duplicate and Non IPs will be removed automatically)</p>
         </div>
 
         <div class="grid">
             <div class="column">
+                <h3>IPinfo API Key</h3>
                 <form class="ip-form">
-                    <h3 for="api-key">IPinfo API Key:</h3>
-                    <input type="text" id="api-key"><br><br>
+                    <input type="text" id="api-key" placeholder="API key is only stored and used locally"><br><br>
                     <div class="textarea-container">
-                        <textarea id="ip-list" rows="10" cols="50" class="styled-textarea"></textarea>
+                        <textarea id="ip-list" rows="10" cols="50" class="styled-textarea" placeholder="Enter IP addresses, one per line, or, Drag and Drop .txt file here."></textarea>
                         <span id="line-count" class="line-count">Lines: 0</span>
                     </div>
 
                     <button type="button" class="button" onclick="lookup()">Lookup</button>
                     <button type="button" class="button" onclick="exportToCsv()">Export to CSV</button>
-                    <div class="progress-bar" >
+                    <div class="progress-bar">
                         <div class="progress-fill"></div>
                         <span class="progress-text">
                             Progress: 0 / 0
@@ -38,6 +36,7 @@
                     </div>
                 </form>
             </div>
+
             <div class="column chart-container">
                 <h3>Country Distribution</h3>
                 <canvas class="chart" id="country-chart"></canvas>
@@ -48,6 +47,7 @@
                 <canvas class="chart" id="registrar-chart"></canvas>
             </div>
         </div>
+
 
         <table class="table results-table">
             <thead>
@@ -63,6 +63,11 @@
             </tbody>
         </table>
     </div>
+    <footer class="footer">
+    <p>
+        © 2024 <a href="https://adammanleykelly.github.io" target="_blank" class="footer-link">Adam Manley Kelly </a>
+    </p>
+</footer>
 </body>
 
 </html>

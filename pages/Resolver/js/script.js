@@ -45,8 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Lookup function
     window.lookup = async function () {
         const apiKey = document.getElementById("api-key").value.trim();
-        const ipList = document.getElementById("ip-list").value.trim();
-        const ipArray = ipList.split("\n").map(ip => ip.trim());
+        const ipListTextarea = document.getElementById("ip-list");
+        const ipList = ipListTextarea.value.trim().split("\n").map(ip => ip.trim());
         const queriedIPs = new Set();
 
         const countryCounts = {};
@@ -55,12 +55,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Clear table and reset progress
         tableBody.innerHTML = "";
-        const filteredIPs = ipArray.filter(ip => !isRFC1918(ip)); // Automatically exclude private IPs
 
-        const total = filteredIPs.length; // Only count non-private IPs
+        // Validate and filter IPs
+        const validIPs = ipList.filter(ip => isValidIP(ip));
+        if (validIPs.length === 0) {
+            alert("No valid IP addresses entered. Please enter valid IP addresses.");
+            return;
+        }
+
+        const total = validIPs.length;
         let current = 0;
 
-        for (const ip of filteredIPs) {
+        for (const ip of validIPs) {
             if (!ip || queriedIPs.has(ip)) {
                 current++;
                 updateProgressBar(current, total);
@@ -94,11 +100,23 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        // Enable sorting after all rows are added
+        //highlightInvalidIPs(ipList);
         makeTableSortable();
     };
 
+    function isValidIP(ip) {
+        const ipv4Regex = /^(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)$/;
+        const ipv6Regex = /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}(([0-9]{1,3}\.){3}[0-9]{1,3})|([0-9a-fA-F]{1,4}:){1,4}:(([0-9]{1,3}\.){3}[0-9]{1,3}))$/;
 
+        return ipv4Regex.test(ip) || ipv6Regex.test(ip);
+    }
+
+    /**function highlightInvalidIPs(ipList) {
+        const invalidIPs = ipList.filter(ip => !isValidIP(ip));
+        if (invalidIPs.length > 0) {
+            alert(`The following IPs are invalid and were skipped:\n${invalidIPs.join("\n")}`);
+        }
+    }**/
 
     // Add a row to the table
     function addRowToTable(ip, registrar, country) {
@@ -142,37 +160,58 @@ document.addEventListener("DOMContentLoaded", function () {
         progressText.innerText = `Progress: ${current} / ${total}`;
     }
 
-    // Update country chart
     function updateCountryChart(data) {
-        const ctx = document.getElementById("country-chart").getContext("2d");
-        if (countryPieChart) countryPieChart.destroy();
-        countryPieChart = new Chart(ctx, {
-            type: "pie",
+        const ctx = document.getElementById('country-chart').getContext('2d');
+        if (window.countryPieChart) {
+            window.countryPieChart.destroy();
+        }
+        window.countryPieChart = new Chart(ctx, {
+            type: 'pie',
             data: {
                 labels: Object.keys(data),
                 datasets: [{
                     data: Object.values(data),
                     backgroundColor: generateColors(Object.keys(data).length)
                 }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // Allow the chart to fit the container
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    }
+                }
             }
         });
     }
 
-    // Update registrar chart
     function updateRegistrarChart(data) {
-        const ctx = document.getElementById("registrar-chart").getContext("2d");
-        if (registrarPieChart) registrarPieChart.destroy();
-        registrarPieChart = new Chart(ctx, {
-            type: "pie",
+        const ctx = document.getElementById('registrar-chart').getContext('2d');
+        if (window.registrarPieChart) {
+            window.registrarPieChart.destroy();
+        }
+        window.registrarPieChart = new Chart(ctx, {
+            type: 'pie',
             data: {
                 labels: Object.keys(data),
                 datasets: [{
                     data: Object.values(data),
                     backgroundColor: generateColors(Object.keys(data).length)
                 }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // Allow the chart to fit the container
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    }
+                }
             }
         });
     }
+
 
     // Generate colors for the charts
     function generateColors(count) {
