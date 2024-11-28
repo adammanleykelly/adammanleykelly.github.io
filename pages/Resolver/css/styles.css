@@ -135,3 +135,28 @@ body {
     width: 100%; /* Make the canvas responsive */
     height: auto; /* Maintain aspect ratio */
 }
+
+/* Container for the textarea and line count */
+.textarea-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Styles for the textarea */
+.styled-textarea {
+    width: 100%;
+    resize: none; /* Disable resizing */
+}
+
+/* Styles for the line count display */
+.line-count {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    color: gray;
+    font-size: 12px;
+    background-color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+}

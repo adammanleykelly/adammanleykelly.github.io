@@ -23,19 +23,9 @@
                 <form class="ip-form">
                     <h3 for="api-key">IPinfo API Key:</h3>
                     <input type="text" id="api-key"><br><br>
-                    <div style="position: relative; display: inline-block; width: 100%;">
-                        <textarea id="ip-list" rows="10" cols="50" style="width: 100%; resize: none;"></textarea>
-                        <span id="line-count" style="
-                            position: absolute; 
-                            bottom: 5px; 
-                            right: 10px; 
-                            color: gray; 
-                            font-size: 12px; 
-                            background-color: white; 
-                            padding: 2px 5px; 
-                            border-radius: 3px;">
-                            Lines: 0
-                        </span>
+                    <div class="textarea-container">
+                        <textarea id="ip-list" rows="10" cols="50" class="styled-textarea"></textarea>
+                        <span id="line-count" class="line-count">Lines: 0</span>
                     </div>
 
                     <button type="button" class="button" onclick="lookup()">Lookup</button>
