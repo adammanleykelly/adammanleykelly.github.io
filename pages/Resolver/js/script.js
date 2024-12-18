@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const apiKeyInput = document.getElementById("api-key");
     const ipListTextarea = document.getElementById("ip-list");
-    const removeRFC1918Checkbox = document.getElementById("remove-rfc1918");
+    // const removeRFC1918Checkbox = document.getElementById("remove-rfc1918");
     const tableBody = document.querySelector(".results-table tbody");
     const progressText = document.querySelector(".progress-text");
     const progressFill = document.querySelector(".progress-fill");
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
         tableBody.innerHTML = "";
 
         // Validate and filter IPs
-        const validIPs = ipList.filter(ip => isValidIP(ip));
+        const validIPs = ipList.filter(ip => isValidIP(ip) && !isRFC1918(ip));
         if (validIPs.length === 0) {
             alert("No valid IP addresses entered. Please enter valid IP addresses.");
             return;
